@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SadakRakshak | Smart Road Safety System</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg-main: #0b1220;
+      --bg-secondary: #111827;
+      --accent: #fbbf24;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #0f172a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--bg-main), var(--bg-secondary));
+      color: var(--text-main);
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 48px;
+      background: rgba(11, 18, 32, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 38px;
+      transition: transform 0.4s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.08);
+    }
+
+    .logo h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.4px;
+    }
+
+    nav a {
+      margin-left: 28px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -6px;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      text-align: center;
+      padding: 110px 20px 90px;
+      max-width: 880px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .cta {
+      margin-top: 40px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 30px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #000;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .cta a:hover {
+      background: #facc15;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- FEATURES ---------- */
+    .section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h3 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 50px;
+      font-weight: 600;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 32px 28px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+
+    .card i {
+      font-size: 26px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .card h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="SadakRakshak Logo">
+    <h1>SadakRakshak</h1>
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">How It Works</a>
+    <a href="#">Live Map</a>
+    <a href="#">Login</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Smarter Roads. <span>Safer Travel.</span></h2>
+  <p>
+    SadakRakshak is a smart road monitoring and pothole detection system
+    designed to improve road safety using real-time data, location tracking,
+    and intelligent reporting.
+  </p>
+
+  <div class="cta">
+    <a href="#">🗺️ View Live Map</a>
+    <a href="#">📊 View Live Data</a>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Why SadakRakshak?</h3>
+
+  <div class="cards">
+    <div class="card">
+      <i class="fas fa-road"></i>
+      <h4>Continuous Road Monitoring</h4>
+      <p>Automatically detects potholes and road irregularities during movement.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h4>Precise Location Tracking</h4>
+      <p>Each issue is mapped using accurate GPS coordinates.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-chart-line"></i>
+      <h4>Live Data & Analytics</h4>
+      <p>Authorities can view road conditions and reports in real time.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-shield-alt"></i>
+      <h4>Enhanced Road Safety</h4>
+      <p>Early detection helps prevent accidents and vehicle damage.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 SadakRakshak • Smart Road Safety & Management System
+</footer>
+
+</body>
+</html>

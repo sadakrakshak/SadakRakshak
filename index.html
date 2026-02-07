@@ -8,17 +8,18 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
+  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
-      --bg-main: #0b1220;
-      --bg-secondary: #111827;
+      --bg-main: #0b1020;
+      --bg-secondary: #0e1628;
       --accent: #fbbf24;
       --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --card-bg: #0f172a;
+      --text-muted: #a1a1aa;
+      --card-bg: #0b1324;
+      --border-soft: rgba(255,255,255,0.06);
     }
 
     * {
@@ -31,6 +32,7 @@
     body {
       background: linear-gradient(180deg, var(--bg-main), var(--bg-secondary));
       color: var(--text-main);
+      line-height: 1.6;
     }
 
     /* ---------- HEADER ---------- */
@@ -38,65 +40,56 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 48px;
-      background: rgba(11, 18, 32, 0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 52px;
+      background: rgba(11, 16, 32, 0.9);
+      border-bottom: 1px solid var(--border-soft);
       position: sticky;
       top: 0;
       z-index: 100;
+      backdrop-filter: blur(10px);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
-    .logo img {
-      width: 38px;
-      transition: transform 0.4s ease;
+    .logo-box img {
+      width: 60px;
+      animation: floatLogo 4.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 4px rgba(251,191,36,0.25));
     }
 
-    .logo img:hover {
-      transform: scale(1.08);
+    @keyframes floatLogo {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
     }
 
     .logo h1 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--accent);
-      letter-spacing: 0.4px;
     }
 
     nav a {
-      margin-left: 28px;
+      margin-left: 32px;
       color: var(--text-main);
       text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 500;
-      position: relative;
+      font-size: 14px;
+      opacity: 0.85;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      left: 0;
-      bottom: -6px;
-      transition: width 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+    nav a:hover {
+      opacity: 1;
     }
 
     /* ---------- HERO ---------- */
     .hero {
       text-align: center;
       padding: 110px 20px 90px;
-      max-width: 880px;
+      max-width: 900px;
       margin: auto;
     }
 
@@ -111,61 +104,60 @@
     }
 
     .hero p {
-      font-size: 17px;
+      font-size: 16.5px;
       color: var(--text-muted);
-      line-height: 1.7;
       max-width: 720px;
       margin: auto;
     }
 
+    /* ---------- SINGLE CTA ---------- */
     .cta {
-      margin-top: 40px;
+      margin-top: 46px;
     }
 
     .cta a {
       display: inline-block;
-      margin: 10px;
-      padding: 14px 30px;
-      border-radius: 8px;
-      background: var(--accent);
+      padding: 15px 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #fbbf24, #facc15);
       color: #000;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .cta a:hover {
-      background: #facc15;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(251,191,36,0.35);
     }
 
-    /* ---------- FEATURES ---------- */
+    /* ---------- SECTION ---------- */
     .section {
-      padding: 80px 40px;
-      max-width: 1100px;
+      padding: 85px 40px;
+      max-width: 1120px;
       margin: auto;
     }
 
     .section h3 {
       text-align: center;
       font-size: 28px;
-      margin-bottom: 50px;
+      margin-bottom: 56px;
       font-weight: 600;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 28px;
     }
 
     .card {
       background: var(--card-bg);
-      padding: 32px 28px;
+      padding: 34px 30px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: transform 0.3s, border 0.3s;
+      border: 1px solid var(--border-soft);
+      transition: transform 0.3s ease, border 0.3s ease;
     }
 
     .card:hover {
@@ -182,23 +174,22 @@
     .card h4 {
       font-size: 17px;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .card p {
       font-size: 14.5px;
       color: var(--text-muted);
-      line-height: 1.6;
     }
 
     /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
-      padding: 22px;
-      font-size: 14px;
+      padding: 24px;
+      font-size: 13.5px;
       color: var(--text-muted);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      background: #020617;
+      border-top: 1px solid var(--border-soft);
+      background: #070b18;
     }
   </style>
 </head>
@@ -207,7 +198,9 @@
 
 <header>
   <div class="logo">
-    <img src="logo.png" alt="SadakRakshak Logo">
+    <div class="logo-box">
+      <img src="logo.png" alt="SadakRakshak Logo">
+    </div>
     <h1>SadakRakshak</h1>
   </div>
 
@@ -215,21 +208,20 @@
     <a href="#">Home</a>
     <a href="#">How It Works</a>
     <a href="#">Live Map</a>
-    <a href="#">Login</a>
+    <a href="login.html">Login</a>
   </nav>
 </header>
 
 <section class="hero">
   <h2>Smarter Roads. <span>Safer Travel.</span></h2>
   <p>
-    SadakRakshak is a smart road monitoring and pothole detection system
-    designed to improve road safety using real-time data, location tracking,
-    and intelligent reporting.
+    SadakRakshak is a smart road safety and pothole monitoring platform
+    using real-time sensing, GPS tagging, and analytics
+    to improve urban infrastructure and public safety.
   </p>
 
   <div class="cta">
-    <a href="#">🗺️ View Live Map</a>
-    <a href="#">📊 View Live Data</a>
+    <a href="login.html">Click here to proceed →</a>
   </div>
 </section>
 
@@ -239,26 +231,26 @@
   <div class="cards">
     <div class="card">
       <i class="fas fa-road"></i>
-      <h4>Continuous Road Monitoring</h4>
-      <p>Automatically detects potholes and road irregularities during movement.</p>
+      <h4>Automated Monitoring</h4>
+      <p>Continuously detects potholes and damaged road segments.</p>
     </div>
 
     <div class="card">
-      <i class="fas fa-map-marker-alt"></i>
-      <h4>Precise Location Tracking</h4>
-      <p>Each issue is mapped using accurate GPS coordinates.</p>
+      <i class="fas fa-map-marked-alt"></i>
+      <h4>Location Precision</h4>
+      <p>GPS-based tagging ensures accurate and reliable reports.</p>
     </div>
 
     <div class="card">
       <i class="fas fa-chart-line"></i>
-      <h4>Live Data & Analytics</h4>
-      <p>Authorities can view road conditions and reports in real time.</p>
+      <h4>Real-Time Insights</h4>
+      <p>Live dashboards help authorities prioritize road repairs.</p>
     </div>
 
     <div class="card">
       <i class="fas fa-shield-alt"></i>
-      <h4>Enhanced Road Safety</h4>
-      <p>Early detection helps prevent accidents and vehicle damage.</p>
+      <h4>Public Safety</h4>
+      <p>Early detection reduces accidents and vehicle damage.</p>
     </div>
   </div>
 </section>

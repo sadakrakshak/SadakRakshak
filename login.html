@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SadakRakshak | Login</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background:
+        radial-gradient(circle at 20% 20%, #1e40af55, transparent 40%),
+        radial-gradient(circle at 80% 80%, #22c55e33, transparent 40%),
+        linear-gradient(135deg, #020617, #0f172a, #020617);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      padding: 44px 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 34px;
+    }
+
+    .login-options {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .login-btn {
+      padding: 16px;
+      border-radius: 14px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .user-btn {
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #052e16;
+    }
+
+    .user-btn:hover {
+      box-shadow: 0 14px 28px rgba(34, 197, 94, 0.45);
+    }
+
+    .authority-btn {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      color: #020617;
+    }
+
+    .authority-btn:hover {
+      box-shadow: 0 14px 28px rgba(59, 130, 246, 0.45);
+    }
+
+    .map-btn {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      color: #451a03;
+    }
+
+    .map-btn:hover {
+      box-shadow: 0 14px 28px rgba(245, 158, 11, 0.45);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      opacity: 0.65;
+      letter-spacing: 0.4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+
+    <img src="logo.png" alt="SadakRakshak Logo" class="logo" />
+
+    <h1>SadakRakshak</h1>
+    <p>Smart Road Safety & Pothole Monitoring</p>
+
+    <div class="login-options">
+      <button class="login-btn user-btn" onclick="goToUserLogin()">
+        User Login
+      </button>
+
+      <button class="login-btn authority-btn" onclick="goToAuthorityLogin()">
+        Authority Login
+      </button>
+
+      <button class="login-btn map-btn" onclick="goToMap()">
+        View Pothole Map
+      </button>
+    </div>
+
+    <footer>
+      Built for safer roads 🚦
+    </footer>
+  </div>
+
+  <script>
+    function goToUserLogin() {
+      window.location.href = "userlogin.html";
+    }
+
+    function goToAuthorityLogin() {
+      window.location.href = "authoritylogin.html";
+    }
+
+    function goToMap() {
+      window.location.href = "map.html";
+    }
+  </script>
+</body>
+</html>

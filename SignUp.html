@@ -125,7 +125,7 @@
 
     // Load Cities
     async function loadCities() {
-      const citySnapshot = await getDocs(collection(db, "cities"));
+      const citySnapshot = await getDocs(collection(db, "Cities"));
       citySnapshot.forEach(doc => {
         const data = doc.data();
         const option = document.createElement("option");
@@ -142,7 +142,7 @@
       const selectedCityId = cityDropdown.value;
       if (!selectedCityId) return;
 
-      const districtQuery = query(collection(db, "districts"), where("cityID", "==", selectedCityId));
+      const districtQuery = query(collection(db, "Districts"), where("cityID", "==", selectedCityId));
       const districtSnapshot = await getDocs(districtQuery);
       districtSnapshot.forEach(doc => {
         const data = doc.data();
@@ -191,6 +191,4 @@
   </script>
 
 </body>
-
 </html>
-

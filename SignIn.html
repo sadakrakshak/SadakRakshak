@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SadakRakshak | Sign In</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Dark aesthetic theme colors */
+    :root {
+      --primary-color: #FF6B35;       /* Accent color */
+      --secondary-color: #121212;     /* Dark background */
+      --card-bg: #1E1E1E;             /* Form container background */
+      --input-bg: #2A2A2A;            /* Input field background */
+      --input-border: #444444;        /* Input border color */
+      --text-color: #E0E0E0;          /* Light text */
+      --placeholder-color: #AAAAAA;   /* Placeholder text */
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0D0D0D, #1A1A1A);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: var(--text-color);
+    }
+
+    .signin-container {
+      background-color: var(--card-bg);
+      padding: 50px 35px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #333;
+    }
+
+    .signin-container h2 {
+      text-align: center;
+      margin-bottom: 35px;
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--primary-color);
+      letter-spacing: 1px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--input-border);
+      background-color: var(--input-bg);
+      color: var(--text-color);
+      font-size: 16px;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input::placeholder {
+      color: var(--placeholder-color);
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
+      outline: none;
+    }
+
+    .signin-button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: var(--primary-color);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .signin-button:hover {
+      background-color: #FF5722;
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.5);
+    }
+
+    .bottom-text {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--placeholder-color);
+    }
+
+    .bottom-text a {
+      color: var(--primary-color);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .bottom-text a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      .signin-container {
+        padding: 35px 25px;
+      }
+      .signin-container h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="signin-container">
+    <h2>Sign In</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+
+      <button type="submit" class="signin-button">Sign In</button>
+    </form>
+
+    <div class="bottom-text">
+      Don't have an account? <a href="userlogin.html">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>

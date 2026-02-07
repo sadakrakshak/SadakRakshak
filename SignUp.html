@@ -142,7 +142,7 @@
       const selectedCityId = cityDropdown.value;
       if (!selectedCityId) return;
 
-      const districtQuery = query(collection(db, "Districts"), where("cityID", "==", selectedCityId));
+      const districtQuery = query(collection(db, "districts"), where("cityID", "==", selectedCityId));
       const districtSnapshot = await getDocs(districtQuery);
       districtSnapshot.forEach(doc => {
         const data = doc.data();
@@ -193,3 +193,4 @@
 </body>
 
 </html>
+

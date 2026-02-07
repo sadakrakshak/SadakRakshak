@@ -125,7 +125,7 @@
 
     // Load Cities
     async function loadCities() {
-      const citySnapshot = await getDocs(collection(db, "Cities"));
+      const citySnapshot = await getDocs(collection(db, "cities"));
       citySnapshot.forEach(doc => {
         const data = doc.data();
         const option = document.createElement("option");
@@ -191,4 +191,5 @@
   </script>
 
 </body>
+
 </html>

@@ -1,159 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SadakRakshak | Sign In</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* Dark aesthetic theme colors */
     :root {
-      --primary-color: #FF6B35;       /* Accent color */
-      --secondary-color: #121212;     /* Dark background */
-      --card-bg: #1E1E1E;             /* Form container background */
-      --input-bg: #2A2A2A;            /* Input field background */
-      --input-border: #444444;        /* Input border color */
-      --text-color: #E0E0E0;          /* Light text */
-      --placeholder-color: #AAAAAA;   /* Placeholder text */
+      --bg-main: #0A0F1E;
+      --bg-card: #11172A;
+      --bg-input: #161D35;
+      --border-soft: #232B4A;
+      --accent: #4F7CFF;
+      --text-main: #E4E9FF;
+      --text-muted: #8E96C5;
+      --error: #F87171;
     }
 
-    /* Reset */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #0D0D0D, #1A1A1A);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
-      color: var(--text-color);
+      background: var(--bg-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
     }
 
     .signin-container {
-      background-color: var(--card-bg);
-      padding: 50px 35px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       width: 100%;
       max-width: 400px;
-      border: 1px solid #333;
+      background: var(--bg-card);
+      padding: 40px 32px;
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
     }
 
-    .signin-container h2 {
+    h2 {
       text-align: center;
-      margin-bottom: 35px;
-      font-weight: 700;
-      font-size: 28px;
-      color: var(--primary-color);
-      letter-spacing: 1px;
+      margin-bottom: 28px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
     }
 
     .form-group {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
-    .form-group label {
+    label {
       display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--text-color);
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
-    .form-group input {
+    input {
       width: 100%;
-      padding: 14px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--input-border);
-      background-color: var(--input-bg);
-      color: var(--text-color);
-      font-size: 16px;
-      transition: border 0.3s, box-shadow 0.3s;
+      padding: 13px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-soft);
+      background: var(--bg-input);
+      color: var(--text-main);
+      font-size: 14px;
     }
 
-    .form-group input::placeholder {
-      color: var(--placeholder-color);
+    input::placeholder {
+      color: #6F77A8;
     }
 
-    .form-group input:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
+    input:focus {
       outline: none;
+      border-color: var(--accent);
     }
 
     .signin-button {
       width: 100%;
-      padding: 16px;
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 8px;
       border: none;
-      border-radius: 12px;
-      background-color: var(--primary-color);
+      background: var(--accent);
       color: #fff;
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
       cursor: pointer;
-      transition: all 0.3s;
     }
 
     .signin-button:hover {
-      background-color: #FF5722;
-      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.5);
+      opacity: 0.92;
+    }
+
+    .error {
+      margin-top: 14px;
+      font-size: 12.5px;
+      text-align: center;
+      color: var(--error);
     }
 
     .bottom-text {
-      text-align: center;
       margin-top: 18px;
-      font-size: 14px;
-      color: var(--placeholder-color);
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--text-muted);
     }
 
     .bottom-text a {
-      color: var(--primary-color);
-      font-weight: 500;
+      color: var(--accent);
       text-decoration: none;
-    }
-
-    .bottom-text a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 500px) {
-      .signin-container {
-        padding: 35px 25px;
-      }
-      .signin-container h2 {
-        font-size: 24px;
-      }
     }
   </style>
 </head>
+
 <body>
+
   <div class="signin-container">
-    <h2>Sign In</h2>
-    <form>
+    <h2>Sign in to SadakRakshak</h2>
+
+    <form id="signinForm">
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
       </div>
 
-      <button type="submit" class="signin-button">Sign In</button>
+      <button class="signin-button" type="submit">Sign In</button>
     </form>
 
+    <div class="error" id="errorMsg"></div>
+
     <div class="bottom-text">
-      Don't have an account? <a href="usersignup.html">Sign Up</a>
+      No account? <a href="usersignup.html">Create one</a>
     </div>
   </div>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB8R2_FKYcSemxlAat42qDiVZta7AZnq4Q",
+      authDomain: "sadakrakshak.firebaseapp.com",
+      projectId: "sadakrakshak",
+      storageBucket: "sadakrakshak.firebasestorage.app",
+      messagingSenderId: "179492663418",
+      appId: "1:179492663418:web:15d66a1eaf757c8e358bc3",
+      measurementId: "G-XFR62QRZTC"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+
+    const auth = getAuth(app);
+    const form = document.getElementById("signinForm");
+    const errorMsg = document.getElementById("errorMsg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = email.value;
+      const password = password.value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => window.location.href = "dashboard.html")
+        .catch(err => errorMsg.textContent = err.message);
+    });
+  </script>
+
 </body>
 </html>
-

@@ -179,13 +179,14 @@
       const password = password.value;
 
       signInWithEmailAndPassword(auth, email, password)
-        .then(() => window.location.href = "Dashboard.html")
+        .then(() => window.location.href = "dashboard.html")
         .catch(err => errorMsg.textContent = err.message);
     });
   </script>
 
 </body>
 </html>
+
 
 
 
